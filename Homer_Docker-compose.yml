@@ -1,0 +1,20 @@
+services:
+  homer:
+    image: b4bz/homer:latest
+    container_name: homer
+    volumes:
+      - ./assets:/www/assets
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=reverse"
+      - "traefik.http.routers.homer.rule=Host(`homer.local`)"
+      - "traefik.http.routers.homer.entrypoints=websecure"
+      - "traefik.http.routers.homer.tls=true"
+      - "traefik.http.services.homer.loadbalancer.server.port=8080"
+    networks:
+      - reverse
+    restart: unless-stopped
+
+networks:
+  reverse:
+    external: true

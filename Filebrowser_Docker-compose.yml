@@ -1,0 +1,24 @@
+services: 
+  filebrowser:
+    image: hurlenko/filebrowser
+    container_name: filebrowser
+    labels:
+     - "traefik.enable=true"
+     - "traefik.docker.network=reverse"
+     - "traefik.http.routers.filebrowser.rule=Host(`file.local`)"
+     - "traefik.http.routers.filebrowser.entrypoints=websecure"
+     - "traefik.http.routers.filebrowser.tls=true"
+     - "traefik.http.services.filebrowser.loadbalancer.server.port=8080"
+    user: "1000:1000"
+    environment:
+      - FB_BASEURL=/
+    volumes:
+      - ./data:/data
+      - ./config:/config
+    networks:
+      - reverse
+    restart: unless-stopped
+
+networks:
+  reverse:
+    external: true
