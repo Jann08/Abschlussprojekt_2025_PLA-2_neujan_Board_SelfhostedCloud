@@ -14,3 +14,4 @@ cd ../homer && docker compose up -d
 cd ../bookstack && docker compose up -d
 cd ../uptime-kuma && docker compose up -d
 cd ../filebrowser && docker compose up -d
+cd ../filebrowser && docker compose up -d
