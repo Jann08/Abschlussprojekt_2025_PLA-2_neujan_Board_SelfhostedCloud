@@ -1,5 +1,6 @@
 #!/bin/bash
 # Stop_Script.sh
+# This script is used to stop various Docker containers for a self-hosted cloud project.  And exits emmediately if any command fails.
 # This script is used to stop various Docker containers for a self-hosted cloud project.
 # Ensure the script is run from the correct directory or adjust paths accordingly.
 

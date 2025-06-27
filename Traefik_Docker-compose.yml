@@ -2,27 +2,25 @@ services:
   traefik:
     image: traefik:v3.0
     container_name: traefik
+    command:
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--api.dashboard=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.file.directory=/etc/traefik"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.api.rule=Host(`traefik.local`)"
       - "traefik.http.routers.api.service=api@internal"
       - "traefik.http.routers.api.entrypoints=websecure"
       - "traefik.http.routers.api.tls=true"
-    command:
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.websecure.address=:443"
-      - "--entrypoints.websecure.http.tls=true"
-      - "--api.dashboard=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--providers.file.directory=/certs"
-      - "--providers.file.watch=true"
     ports:
       - "80:80"
       - "443:443"
     volumes:
+      - ./certs:/etc/traefik:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./certs:/certs:ro
     networks:
       - reverse
 

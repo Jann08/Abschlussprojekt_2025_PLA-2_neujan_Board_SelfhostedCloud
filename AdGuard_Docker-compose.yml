@@ -1,0 +1,25 @@
+services:
+  adguard:
+    image: adguard/adguardhome
+    container_name: adguard
+    restart: unless-stopped
+    networks:
+      - reverse
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+
+    volumes:
+      - ./conf:/opt/adguardhome/conf
+      - ./work:/opt/adguardhome/work
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=reverse"
+      - "traefik.http.routers.adguard.rule=Host(`dns.local`)"
+      - "traefik.http.routers.adguard.entrypoints=websecure"
+      - "traefik.http.routers.adguard.tls=true"
+      - "traefik.http.services.adguard.loadbalancer.server.port=80"
+
+networks:
+  reverse:
+    external: true
