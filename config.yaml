@@ -1,3 +1,10 @@
+# -------------------------------------------------------------
+# Datei: config.yaml
+# Projekt: PLA-2 Abschlussprojekt 2025 – piCloudcore
+# Autor: Jann Neururer
+# Datum: 27.06.2025
+# Beschreibung: Konfigurationsdatei für das Projekt Dashboard
+# -------------------------------------------------------------
 title: Projekt Dashboard
 subtitle: Übersicht über alle Dienste
 theme: default

@@ -1,4 +1,10 @@
 #!/bin/bash
+# -------------------------------------------------------------
+# Datei: start_script.sh
+# Projekt: PLA-2 Abschlussprojekt 2025 – piCloudcore
+# Autor: Jann Neururer
+# Beschreibung: Startet alle Docker-Container im Projekt
+# -------------------------------------------------------------
 # Start_Script.sh
 # This script is used to start various Docker containers for a self-hosted cloud project.
 # Ensure the script is run from the correct directory   or adjust paths accordingly.

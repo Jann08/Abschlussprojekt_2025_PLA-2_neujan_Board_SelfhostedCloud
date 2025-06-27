@@ -1,3 +1,10 @@
+# -------------------------------------------------------------
+# Datei: dynamic.yaml
+# Projekt: PLA-2 Abschlussprojekt 2025 – piCloudcore
+# Autor: Jann Neururer
+# Datum: 27.06.2025
+# Beschreibung: Traefik Konfigurationsdatei
+# -------------------------------------------------------------
 tls:
   certificates:
     - certFile: /etc/traefik/self.crt
