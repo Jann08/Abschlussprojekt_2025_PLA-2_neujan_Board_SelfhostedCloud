@@ -1,3 +1,10 @@
+# -------------------------------------------------------------
+# Datei: docker-compose.yml
+# Projekt: PLA-2 Abschlussprojekt 2025 – piCloudcore
+# Autor: Jann Neururer
+# Datum: 27.06.2025
+# Beschreibung: Docker-Compose Datei für AdGuard Home
+# -------------------------------------------------------------
 services:
   adguard:
     image: adguard/adguardhome

@@ -24,6 +24,13 @@ Ziel dieses Projekts war es, auf einem Raspberry Pi eine vollständig selfhosted
 ### Übersicht über alle Dienste (Homer Dashboard)
 ![Homer Dashboard](media/homer_dashboard.png)
 
+
+## Docker Services
+Meine ganzen Dienste laufen in Docker Isoliert so das die Dienste sich nicht gegenseitig behindern Können. Auch ist Docker praktischer für Wartung und Effizienzen.
+
+### Uptime Kuma Monitoring
+![Uptime Kuma](media/uptime_kuma.png)
+
 ## Projektstruktur (Auszug)
 
 /home/piCloudcore/cloudcore-project  
